@@ -20,7 +20,7 @@ void detailed_alignment_parameter_plots()
   /*
 static const std::array<double, 3> mvtx_clamshell_mean[2] ={
    0.0, 0.0, 0.0,
-   0.2, -0.2, 0.3}; 
+   -1.2, -0.2, 0.3}; 
 static const std::array<double,3> mvtx_stave_mean[3] = {
   0.0, 0.0, 0.0,                       // fixed
   -0.05, 0.04, -0.03,                 // dx, dy, dz 
@@ -64,11 +64,11 @@ static const std::array<double,3> tpc_sector_mean[3] = {
   std::vector<std::string> legvec;
   std::vector<int> col;
 
-  finvec.push_back("run24_input.root");
+  finvec.push_back("local_tmp.root");
   legvec.push_back( "Input");
   col.push_back(kRed); 
 
-  finvec.push_back("run24_iter0_fits.root");
+  finvec.push_back("tmp.root");
   legvec.push_back( "Extracted");
   col.push_back(kBlue); 
 

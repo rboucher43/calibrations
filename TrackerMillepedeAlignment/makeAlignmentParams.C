@@ -29,22 +29,22 @@
 //  - THE TRANSLATIONS ARE IN mm
 //============================= 
 
-
+/*
 // example test misalignment settings.
 // fix layer 0 and outer tpc region, INTT grouped as a whole, MVTX grouped by clamshell.
 static const std::array<double, 3> mvtx_clamshell_mean[2] ={
    0.0, 0.0, 0.0,
-   0.2, -0.2, 0.3}; 
+   0.3, 0.1, 0.2}; 
 static const std::array<double,3> mvtx_stave_mean[3] = {
-  0.0, 0.0, 0.0,                       // fixed
-  -0.05, 0.04, -0.03,                 // dx, dy, dz 
-  0.04, -0.06, 0.05 };      
+  0.0, 0.0, 0.0,                      
+  -0.05, 0.03, 0.05,                 // dx, dy, dz 
+  0.03, -0.02, -0.06 };      
 
 static const std::array<double,3> intt_stave_mean[4] = {
-  0.2, -0.15, 0.0,
-  0.2, -0.15, 0.0,
-  0.2, -0.15, 0.0,
-  0.2, -0.15, 0.0 };
+  0.0, 0, 0.0,
+  0.0, 0, 0.0,
+  0.0, 0, 0.0,
+  0.0, 0, 0.0 };
 
 // the index here is tpc region (0-2)
 static const std::array<double,3> tpc_sector_mean[3] = {
@@ -61,6 +61,38 @@ static const double intt_sensor_dev = 0.0;
 static const double tpc_sector_dev = 0.0;
 static const double tpc_surf_dev = 0.0;
 static const double mms_tile_dev = 0.0;
+*/
+
+// Create a set of "realistic" misalignments that we can test procedures on
+static const std::array<double, 3> mvtx_clamshell_mean[2] ={
+   0.1, -0.1, 0.05,
+   0.3, 0.1, 0.2}; 
+static const std::array<double,3> mvtx_stave_mean[3] = {
+  0.02, -0.01, 0.04,                      
+  -0.05, 0.03, 0.05,                 // dx, dy, dz 
+  0.03, -0.02, -0.06 };      
+
+static const std::array<double,3> intt_stave_mean[4] = {
+  0.2, -0.1, 0.2,
+  -0.1, 0.2, 0.3,
+  0.15, -0.07, -0.1,
+  -0.05, 0.05, 0.1 };
+
+// the index here is tpc region (0-2)
+static const std::array<double,3> tpc_sector_mean[3] = {
+  0.4, -0.2, 0.3,
+  -0.2, 0.06, 0.2, 
+  0.5, 0.7, 0.9 };
+static const std::array<double,3> mms_tile_mean = {0, 0, 0};
+
+// These are sigmas of the random distribution of deviations from the mean in mm
+static const double mvtx_stave_dev = 0.05;
+static const double mvtx_sensor_dev = 0.02;
+static const double intt_stave_dev = 0.05;
+static const double intt_sensor_dev = 0.02;
+static const double tpc_sector_dev = 0.05;
+static const double tpc_surf_dev = 0.0;
+static const double mms_tile_dev = 0.05;
 
 // Creates an alignment corrections file containing all zero alignment corrections if true
 bool make_zero_corrections_all = false;

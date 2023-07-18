@@ -24,13 +24,13 @@ void makeAlignmentParsDifferenceFile()
   
   std::cout << " Add new parameters to existing ones" << std::endl;
   
-  ifstream foriginal("run20_input_misalignments.txt");
+  ifstream foriginal("/sphenix/user/rboucher43/macros/detectors/sPHENIX/localAlignmentParamsFile.txt");
   if(!foriginal.is_open()) std::cout << "Unable to open original misalignment params file" << std::endl;
   
-  ifstream fupdated("sumAlignmentParams_run20_iter1.txt");
+  ifstream fupdated("sumAlignmentPars_bigrun_iter0.txt");
   if(!fupdated.is_open()) std::cout << "Unable to open updated params file" << std::endl;
   
-  ofstream fdifference("differenceAlignmentParams_run20_iter1.txt");
+  ofstream fdifference("differenceAlignmentParams_iter0.txt");
   
   TrkrDefs::hitsetkey key_original, key_updated;
   float pars_original[6], pars_updated[6];
